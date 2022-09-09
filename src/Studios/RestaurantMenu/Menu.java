@@ -1,21 +1,50 @@
 package Studios.RestaurantMenu;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 
 public class Menu {
-    private HashMap<String, ArrayList<MenuItem>> items;
+    private ArrayList<MenuItem> items;
+    private Date updatedDate;
 
-    public Menu(HashMap<String, ArrayList<MenuItem>> items) {
+    public Menu(ArrayList<MenuItem> items, Date updatedDate) {
         this.items = items;
+        this.updatedDate = updatedDate;
     }
 
-    public HashMap<String, ArrayList<MenuItem>> getItems() {
+    public ArrayList<MenuItem> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<String, ArrayList<MenuItem>> items) {
+    public void setItems(ArrayList<MenuItem> items) {
         this.items = items;
     }
+
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public ArrayList<MenuItem> addItem(MenuItem addedItem) {
+        this.items.add(addedItem);
+        return this.items;
+    }
+
+    public ArrayList<MenuItem> deleteItem(MenuItem deletedItem) {
+        this.items.remove(deletedItem);
+        return this.items;
+    }
+
+    public void printMenu() {
+        String myString = "";
+        for (MenuItem item: this.items) {
+            myString += item.getName() + ":" + item.getPrice() + "\n";
+        }
+        System.out.println(myString);
+    }
+
 }
 
