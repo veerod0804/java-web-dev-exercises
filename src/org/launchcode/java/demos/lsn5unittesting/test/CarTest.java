@@ -31,12 +31,12 @@ public class CarTest {
 
 //    @Test
 //    public void testInitialGasTank() {
-//        assertFalse("Gas tank is empty", false);
+//        assertFalse(test_car.getGasTankLevel() == 0);
 //    }
 
 //    @Test
 //    public void testInitialGasTank() {
-//        assertTrue("Gas tank is not empty", true);
+//        assertTrue(test_car.getGasTankLevel() == 10);
 //    }
 
     //TODO: gasTankLevel is accurate after driving within tank range
